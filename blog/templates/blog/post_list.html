@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+<!-- ####################################################################### -->
+{% block content %}
+
+    {% for post in posts %}
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+          <h1 class="mt-5"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <p class="lead">{{ post.text|linebreaksbr }}</p>
+          <p>{{ post.published_date }}</p>
+        </div>
+    </main>
+    {% endfor %}
+
+{% endblock %}
+<!-- ####################################################################### -->
